@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class AppleTree : MonoBehaviour
 {
+    void Awake()
+    {
+        enabled = false;
+    }
+
     [Header("Tree Movement")]
     public float speed = 5f;
     public float leftAndRightDistance = 10f;
@@ -11,6 +16,10 @@ public class AppleTree : MonoBehaviour
     [Header("Apple Spawning")]
     public GameObject applePrefab;
     public float appleDropDelay = 2f;
+
+    [Header("Branch Spawning")]
+    public GameObject branchPrefab;
+    public float branchChance = 0.1f;
 
     private Vector3 startPosition;
     private int direction = 1;
@@ -39,19 +48,28 @@ public class AppleTree : MonoBehaviour
 
         if (appleDropTime <= 0)
         {
-            DropApple();
+            DropObject();
             appleDropTime = appleDropDelay;
         }
     }
 
-    void DropApple()
+    void DropObject()
     {
-        GameObject apple = Instantiate (
-            applePrefab,
-            transform.position,
-            Quaternion.identity
-        );
+        if (Random.value < branchChance)
+        {
+            Instantiate(
+                branchPrefab,
+                transform.position,
+                Quaternion.identity
+            );
+        }
+        else
+        {
+            Instantiate(
+                applePrefab,
+                transform.position,
+                Quaternion.identity
+            );
+        }
     }
 }
-
-

@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    public float xMin = -10f;
-    public float xMax = 10f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float xMin = -15f;
+    public float xMax = 15f;
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -27,6 +21,13 @@ public class Basket : MonoBehaviour
         worldPos.x = Mathf.Clamp(worldPos.x, xMin, xMax);
 
         transform.position = worldPos;
-        
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Apple"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
