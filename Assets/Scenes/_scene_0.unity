@@ -1425,6 +1425,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 880987283418880716, guid: 905e91920ff44bd4688bdc78f369d1b1, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 880987283418880716, guid: 905e91920ff44bd4688bdc78f369d1b1, type: 3}
       propertyPath: applePrefab
       value: 
       objectReference: {fileID: 7002174183729806875, guid: bede13ef0ce71e24a9cd0e1cba6eb6b5, type: 3}
@@ -1434,7 +1438,7 @@ PrefabInstance:
       objectReference: {fileID: 7754749351770468656, guid: c68bdab97e4142b4383c889b102968a3, type: 3}
     - target: {fileID: 880987283418880716, guid: 905e91920ff44bd4688bdc78f369d1b1, type: 3}
       propertyPath: appleDropDelay
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2447260896265513018, guid: 905e91920ff44bd4688bdc78f369d1b1, type: 3}
       propertyPath: m_Name
